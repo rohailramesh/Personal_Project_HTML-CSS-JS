@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <h1>COUNTER</h1>
+    <h2 id="display_counter">0</h2>
+    <button onclick="increase_count()">+</button>
+    <br>
+    <button onclick="decrease_count()">-</button>
+    <br>
+    <button onclick="reset_count()">Reset</button>
+</body>
+<script>
+    counter = 0
+    function increase_count(){
+        counter += 1
+        document.getElementById('display_counter').innerHTML = counter;
+    }
+    function decrease_count(){
+        counter -= 1
+        document.getElementById('display_counter').innerHTML = counter;
+    }
+    function reset_count(){
+        counter = 0
+        document.getElementById('display_counter').innerHTML = counter;
+    }
+</script>
+</html>
