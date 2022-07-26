@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+</head>
+<body>
+    <h1>Mortgage Repayment Calculator</h1>
+    <label for="loan_amount">Loan amount £</label>
+    <input type="text" id="loan_amount" name="Loan amount: ">
+    <br>
+    <br>
+    <label for="interest_rate">Interest rate %</label>
+    <input type="text" id="interest_rate" name="Interest rate: ">
+    <br>
+    <br>
+    <label for="months">Number of months: </label>
+    <input type="text" id="months" name="Months: ">
+    <br>
+    <br>
+    <button onclick="monthly_repayment()">Calculate</button>
+    <h2>Monthly repayment: </h2>
+    <h3 id="display_monthly_repayment"></h3>
+</body>
+
+<script>
+    function monthly_repayment(){
+        var loan_amount = parseFloat(document.getElementById('loan_amount').value);
+        var interest_rate = parseFloat((document.getElementById('interest_rate').value)/100);
+        var months = parseFloat(document.getElementById('months').value);
+        var numerator = loan_amount * (interest_rate / 12) * ((1 + (interest_rate / 12))** months);
+        var denominator = ((1 + (interest_rate / 12))** months)- 1; 
+        var monthly_repayment = numerator / denominator;
+        document.getElementById('display_monthly_repayment').innerHTML = '£' + monthly_repayment.toFixed(2);
+    }
+</script>
+</html>

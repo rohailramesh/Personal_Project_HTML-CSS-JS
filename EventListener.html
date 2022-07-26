@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+</head>
+<body>
+    <div id="div_1"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel iste blanditiis officiis! Optio cumque provident unde esse debitis exercitationem adipisci dicta ad quis accusamus, fugit quae. Dolorum rem optio porro?</p></div>
+</body>
+<script>
+function change_colour(x){
+    x.style.background = "pink";
+}
+my_div = document.getElementById("div_1"); 
+my_div.addEventListener("mousehover", change_colour(my_div));
+</script>
+</html>
